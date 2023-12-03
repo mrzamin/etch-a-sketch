@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vh;
+}
+
+.gridItem {
+    width: calc(100vh / 17);
+    background-color: grey;
+    border: 1px solid black;
+}
