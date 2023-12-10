@@ -1,21 +1,43 @@
-//Set global variables.
+//Set up global variables.
+let container = document.getElementById("container");
+let input = document.getElementById("input").value;
+let btn = document.getElementById("btn");
 
-const container = document.querySelector('.container');
+//Makes a default grid that is 16x16 size.
+function defaultGrid(input) {
+  for (let i = 0; i < input; i++) {
+    let row = document.createElement("div");
+    row.classList.add("row");
+    container.appendChild(row);
 
-
-function genDivs (number) {
-    for(let i = 0; i < number; i++) {
-        let gridRow = document.createElement('div');
-        gridRow.classList.add('row');
-        container.appendChild(gridRow);
-        for (let k = 0; k < number; k++) {
-            let gridColumn = document.createElement('div');
-            gridColumn.classList.add('column');
-            gridColumn.addEventListener ('mouseover', () =>
-            {gridColumn.style.backgroundColor = "pink"});
-            gridRow.appendChild(gridColumn);
-        }
+    for (let k = 0; k < input; k++) {
+      let column = document.createElement("div");
+      column.classList.add("column");
+      column.addEventListener("mouseover", () => {
+        column.style.backgroundColor = "pink";
+      });
+      row.appendChild(column);
     }
+  }
 }
 
-genDivs(16);
+defaultGrid(input);
+
+//Changes the grid size.
+function changeSize(input) {
+  myNode = document.getElementById("container");
+  myNode.textContent = "";
+
+  if (input < 2 || input > 99) {
+    alert("Too big or too small. Pick a number between 2 and 99!");
+    defaultGrid(16);
+  } else {
+    defaultGrid(input);
+  }
+}
+
+//Runs the changeSize funtion once the button is clicked.
+btn.addEventListener("click", () => {
+  let input = document.getElementById("input").value;
+  changeSize(input);
+});

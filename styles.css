@@ -1,32 +1,26 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.container {
-    display: flex;
-    height: 500px;
-    width: 500px;
-    flex-direction: column;
-    border: 5px solid black;
+#container {
+  display: flex;
+  height: 500px;
+  width: 500px;
+  flex-direction: column;
+  border: 5px solid black;
 }
 
 .row {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .column {
-    display: flex;
-    flex: 1;
-    border: 1px solid black;
-}
-
-#btn {
-align-self: center;
-width: 300px;
+  display: flex;
+  flex: 1;
+  border: 1px solid black;
 }
